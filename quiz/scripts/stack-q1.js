@@ -21,7 +21,13 @@ class PStackImpl extends PStack {
   }
 
   pop() {
-    return this._persons.pop().age
+    const poppedPerson = this._persons.pop();
+    if (poppedPerson) {
+      return poppedPerson.age;
+    } else {
+      console.error("Error: Can't pop an empty stack.");
+      return undefined;
+    }
   }
 }
 
